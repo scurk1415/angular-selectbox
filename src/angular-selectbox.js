@@ -47,7 +47,7 @@
       '     class="sb-toggle" ' +
       '     ng-click="vm.toggle()" ' +
       '     ng-class="{\'sb-toggle-active\': vm.active}">' +
-      '    {{ vm.title }}{{ vm.values.length ? (\': \' + vm.values.length) : vm.title }}' +
+      '    {{ vm.title }}{{ vm.displayLength ? (vm.values.length ? (\': \' + vm.values.length) : vm.title) : \'\' }}' +
       '  </a>' +
       '  <ul class="sb-dropdown" ng-show="vm.active">' +
       '    <li ' +
@@ -267,7 +267,8 @@
         values: '=',
         idKey: '@',
         labelKey: '@',
-        onChange: '&'
+        onChange: '&',
+        displayLength: '='
       }
     };
 
